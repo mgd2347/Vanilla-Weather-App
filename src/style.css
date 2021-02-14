@@ -1,0 +1,83 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin-bottom: 3px;
+}
+
+h5 {
+  margin-top: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+form {
+  box-shadow: 2px 5px 8px rgba(37, 39, 90, 0.1);
+  color: #0e2645;
+}
+
+button {
+  box-shadow: 2px 5px 8px rgba(37, 39, 90, 0.1);
+  color: #0e2645;
+  margin-top: 18px;
+  padding: 5px 10px;
+}
+
+.header {
+  color: #8db1d3;
+}
+
+.button {
+  background: #e9ecef;
+  border: 1px solid #ced4db;
+  border-radius: 4px;
+}
+
+.wrapper {
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+.weather-app {
+  background-image: linear-gradient(to bottom, #09203f 0%, #537895 100%);
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.weather-app small {
+  display: block;
+  margin-top: 0;
+}
+
+#city {
+  text-transform: uppercase;
+}
+
+#units {
+  font-size: 14px;
+  position: relative;
+  top: -12px;
+  left: -2px;
+}
+
+#bottom-links {
+  display: block;
+  margin: 20px auto;
+}
+
+#conditions {
+  color: #8db1d3;  
+  margin-top: 10px;
+}
+
+#hourly-forecast {
+  color: #0e2645;
+  margin-top: 10px;
+}
