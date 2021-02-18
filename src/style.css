@@ -46,7 +46,7 @@ button {
 
 .weather-app {
   background-image: linear-gradient(to bottom, #09203f 0%, #537895 100%);
-  border: 1px solid #dadde1;
+  border: 1px solid #8db1d3;
   border-radius: 5px;
   padding: 20px;
 }
@@ -63,7 +63,7 @@ button {
 #units {
   font-size: 14px;
   position: relative;
-  top: -12px;
+  top: -14px;
   left: -2px;
 }
 
