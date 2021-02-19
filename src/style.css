@@ -29,16 +29,6 @@ button {
   padding: 5px 10px;
 }
 
-.header {
-  color: #8db1d3;
-}
-
-.button {
-  background: #e9ecef;
-  border: 1px solid #ced4db;
-  border-radius: 4px;
-}
-
 .wrapper {
   margin: 30px auto;
   max-width: 700px;
@@ -56,28 +46,42 @@ button {
   margin-top: 0;
 }
 
+.header {
+  color: #8db1d3;
+}
+
+.button {
+  background: #e9ecef;
+  border: 1px solid #ced4db;
+  border-radius: 4px;
+}
+
 #city {
   text-transform: uppercase;
+}
+
+#description {
+  text-transform: capitalize;
 }
 
 #units {
   font-size: 14px;
   position: relative;
-  top: -14px;
+  top: -12px;
   left: -2px;
-}
-
-#bottom-links {
-  display: block;
-  margin: 20px auto;
 }
 
 #conditions {
   color: #8db1d3;  
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #hourly-forecast {
   color: #0e2645;
   margin-top: 10px;
+}
+
+#bottom-links {
+  display: block;
+  margin: 20px auto;
 }
