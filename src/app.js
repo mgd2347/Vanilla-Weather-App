@@ -17,7 +17,6 @@ function formatDate(date) {
 }
 
 function displayWeather(response) {
-  console.log(response);
   let city = response.data.name;
   let country = response.data.sys.country;
   document.querySelector("#city").innerHTML = `${city}, ${country}`;
@@ -25,6 +24,12 @@ function displayWeather(response) {
   document.querySelector("#icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#max").innerHTML = Math.round(response.data.main.temp_max);
+  document.querySelector("#min").innerHTML = Math.round(response.data.main.temp_min);
+  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed * 3.6);
+  document.querySelector("#visibility").innerHTML = response.data.visibility / 1000;
 }
 
 function getCity(city) {
@@ -32,8 +37,14 @@ function getCity(city) {
   let apiKey = "6f57e84bdcf65c7e46537056925d0c97";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
-
+  
   axios.get(apiUrl).then(displayWeather);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let searchedCity = document.querySelector("#search-input").value;
+  getCity(searchedCity);
 }
 
 function getPosition(position) {
@@ -53,6 +64,8 @@ function getLocation(event) {
 
 let now = new Date();
 document.querySelector("#date").innerHTML = formatDate(now);
+
+document.querySelector("#search-form").addEventListener("submit", searchCity);
 
 getCity(`Lisbon`);
 

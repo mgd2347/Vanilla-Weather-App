@@ -38,7 +38,7 @@
                 />
                 <span id="temp"></span>° <span id="units"><strong id="celsius">C</strong> | F</span>
               </h2>  
-              <small><strong>16° ·</strong> 12°</small>
+              <small><strong><span id="max"></span>° ·</strong> <span id="min"></span>°</small>
             </div>
           </div>
           <div class="col">
@@ -68,16 +68,16 @@
             </button>
             <ul id="conditions">
               <li>
-                Feels like 12°
+                Feels like: <span id="feels-like"></span>°
               </li>
               <li>
-                Precipitation: 12%
+                Humidity: <span id="humidity"></span>%
               </li>
               <li>
-                Humidity: 87%
+                Wind: <span id="wind"></span> km/h
               </li>
               <li>
-                Wind: 24 km/h
+                Visibility: <span id="visibility"></span> km
               </li>
             </ul>
           </div>
