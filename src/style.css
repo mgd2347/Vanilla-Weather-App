@@ -17,9 +17,14 @@ ul {
   padding: 0;
 }
 
+li {
+  margin: 0 auto;
+}
+
 form {
   box-shadow: 2px 5px 8px rgba(37, 39, 90, 0.1);
   color: #0e2645;
+  margin-top: 15px;
 }
 
 button {
@@ -27,6 +32,15 @@ button {
   color: #0e2645;
   margin-top: 18px;
   padding: 5px 10px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -71,14 +85,22 @@ button {
   left: -2px;
 }
 
+#current-location {
+  margin-top: 40px;
+}
+
 #conditions {
   color: #8db1d3;  
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 #hourly-forecast {
   color: #0e2645;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+#hourly-forecast img {
+  width: 100%;
 }
 
 #bottom-links {
