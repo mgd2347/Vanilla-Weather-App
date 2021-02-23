@@ -51,7 +51,7 @@ a {
 }
 
 hr {
-  color: #8db1d3;
+  color: #ffcc99;
 }
 
 .wrapper {
@@ -72,7 +72,7 @@ hr {
 }
 
 .header {
-  color: #8db1d3;
+  color: #ffcc99;
 }
 
 .button {
@@ -98,12 +98,8 @@ hr {
   left: -2px;
 }
 
-#units a {
-  color: #0e2645;
-}
-
 #units .active {
-  color: #8db1d3;
+  color: #ffcc99;
   cursor: default;
   font-weight: bold;
 }
@@ -113,12 +109,12 @@ hr {
 }
 
 #conditions {
-  color: #8db1d3;  
+  color: #ffcc99;  
   margin-top: 35px;
 }
 
 #hourly-forecast {
-  color: #8db1d3;
+  color: #ffcc99;
   margin-top: 20px;
 }
 
