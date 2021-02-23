@@ -36,9 +36,16 @@
                   alt="cloudy"
                   id="icon"
                 />
-                <span id="temp"></span>° <span id="units"><strong id="celsius">C</strong> | F</span>
-              </h2>  
+                <span id="temp"></span>° 
+                <span id="units">
+                  <a href="#" id="celsius" class="active">C</a> | 
+                  <a href="#" id="fahrenheit">F</a>
+                </span>
+              </h2>
               <small><strong><span id="max"></span>° ·</strong> <span id="min"></span>°</small>
+              <h6>
+                Feels like <span id="feels-like"></span>°
+              </h6> 
             </div>
           </div>
           <div class="col">
@@ -68,9 +75,6 @@
             </button>
             <ul id="conditions">
               <li>
-                Feels like: <span id="feels-like"></span>°
-              </li>
-              <li>
                 Humidity: <span id="humidity"></span>%
               </li>
               <li>
@@ -79,21 +83,23 @@
               <li>
                 Visibility: <span id="visibility"></span> km
               </li>
+              <li>
+                Sunrise: <span id="sunrise"></span>
+              </li>
+              <li>
+                Sunset: <span id="sunset"></span>
+              </li>
             </ul>
           </div>
         </div>
+        <hr />
         <div class="row" id="hourly-forecast">
           <div class="col-2">
             <ul>
               <li>
                 21:00
               </li>
-              <li>
-                <img
-                  src="https://openweathermap.org/img/wn/$10n@2x.png"
-                  alt="Rain"
-                />
-              </li>
+              <li></li>
               <li>
                 12°
               </li>

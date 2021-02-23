@@ -12,13 +12,17 @@ h5 {
   margin-top: 15px;
 }
 
+h6 {
+  margin-top: 5px;
+}
+
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  margin: 0 auto;
+  margin: 2px auto;
 }
 
 form {
@@ -28,10 +32,13 @@ form {
 }
 
 button {
-  box-shadow: 2px 5px 8px rgba(37, 39, 90, 0.1);
   color: #0e2645;
   margin-top: 18px;
   padding: 5px 10px;
+}
+
+button:hover {
+  box-shadow: 2px 5px 8px rgba(37, 39, 90, 0.1);
 }
 
 img {
@@ -41,6 +48,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+hr {
+  color: #0e2645;
 }
 
 .wrapper {
@@ -71,10 +82,12 @@ a {
 }
 
 #city {
+  margin-top: 5px;
   text-transform: uppercase;
 }
 
 #description {
+  margin-bottom: 0;
   text-transform: capitalize;
 }
 
@@ -85,13 +98,23 @@ a {
   left: -2px;
 }
 
+#units a {
+  color: #0e2645;
+}
+
+#units .active {
+  color: #8db1d3;
+  cursor: default;
+  font-weight: bold;
+}
+
 #current-location {
   margin-top: 40px;
 }
 
 #conditions {
   color: #8db1d3;  
-  margin-top: 50px;
+  margin-top: 35px;
 }
 
 #hourly-forecast {

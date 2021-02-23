@@ -27,17 +27,25 @@ function formatDate(timestamp) {
 function displayWeather(response) {
   let city = response.data.name;
   let country = response.data.sys.country;
+  celsiusTemp = response.data.main.temp;
+  maxTemp = response.data.main.temp_max;
+  minTemp = response.data.main.temp_min;
+  feelsLikeTemp = response.data.main.feels_like;
   document.querySelector("#city").innerHTML = `${city}, ${country}`;
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
-  document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#max").innerHTML = Math.round(response.data.main.temp_max);
-  document.querySelector("#min").innerHTML = Math.round(response.data.main.temp_min);
-  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
+  document.querySelector("#max").innerHTML = Math.round(maxTemp);
+  document.querySelector("#min").innerHTML = Math.round(minTemp);
+  document.querySelector("#feels-like").innerHTML = Math.round(feelsLikeTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed * 3.6);
   document.querySelector("#visibility").innerHTML = response.data.visibility / 1000;
+  document.querySelector("#sunrise").innerHTML = formatHours(response.data.sys.sunrise * 1000);
+  document.querySelector("#sunset").innerHTML = formatHours(response.data.sys.sunset * 1000);   
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function displayForecast(response) {
@@ -61,7 +69,7 @@ function displayForecast(response) {
             />
           </li>
           <li>
-            ${Math.round(forecast.main.temp)}°
+            ${Math.round(forecast.main.temp)}°C
           </li>
           <li>
             ${forecast.weather[0].main}
@@ -105,11 +113,38 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
+function displayFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  document.querySelector("#temp").innerHTML = Math.round((celsiusTemp * 1.8) + 32);
+  document.querySelector("#max").innerHTML = Math.round((maxTemp * 1.8) + 32);
+  document.querySelector("#min").innerHTML = Math.round((minTemp * 1.8) + 32);
+  document.querySelector("#feels-like").innerHTML = Math.round((feelsLikeTemp * 1.8) + 32);
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
+  document.querySelector("#max").innerHTML = Math.round(maxTemp);
+  document.querySelector("#min").innerHTML = Math.round(minTemp);
+  document.querySelector("#feels-like").innerHTML = Math.round(feelsLikeTemp);
+}
+
+let celsiusTemp = null;
+let maxTemp = null;
+let minTemp = null;
+let feelsLikeTemp = null;
+
 let now = new Date();
 document.querySelector("#date").innerHTML = formatDate(now);
-
 document.querySelector("#search-form").addEventListener("submit", searchCity);
+document.querySelector("#current-location").addEventListener("click", getLocation);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
 
 getCity(`Lisbon`);
-
-document.querySelector("#current-location").addEventListener("click", getLocation);
