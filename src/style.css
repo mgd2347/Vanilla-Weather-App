@@ -51,7 +51,7 @@ a {
 }
 
 hr {
-  color: #0e2645;
+  color: #8db1d3;
 }
 
 .wrapper {
@@ -60,7 +60,7 @@ hr {
 }
 
 .weather-app {
-  background-image: linear-gradient(to bottom, #09203f 0%, #537895 100%);
+  background-image: url("C:/SheCodes/Vanilla Weather App/media/camping.jpg");
   border: 1px solid #8db1d3;
   border-radius: 5px;
   padding: 20px;
@@ -118,7 +118,7 @@ hr {
 }
 
 #hourly-forecast {
-  color: #0e2645;
+  color: #8db1d3;
   margin-top: 20px;
 }
 
