@@ -45,7 +45,6 @@ function displayWeather(response) {
   document.querySelector("#sunrise").innerHTML = formatHours(response.data.sys.sunrise * 1000);
   document.querySelector("#sunset").innerHTML = formatHours(response.data.sys.sunset * 1000);   
 
-  celsiusTemp = response.data.main.temp;
 }
 
 function displayForecast(response) {
@@ -107,6 +106,9 @@ function getPosition(position) {
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayWeather);
+
+  let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(forecastUrl).then(displayForecast);
 }
 
 function getLocation(event) {
