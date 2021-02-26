@@ -105,12 +105,12 @@ hr {
 }
 
 #current-location {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 #conditions {
   color: #ffcc99;  
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 #hourly-forecast {
